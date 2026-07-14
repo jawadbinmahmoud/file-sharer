@@ -1,222 +1,376 @@
     <!DOCTYPE html>
-    <html lang="ar">
+    <html lang="ar" dir="rtl">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>📤 Share: index.html</title>
+        <title>📤 index.html - Buildura Cloud</title>
+        <script src="https://cdn.tailwindcss.com"></script>
         <style>
             * { margin: 0; padding: 0; box-sizing: border-box; }
+            
             body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: linear-gradient(135deg, #0a0a1a, #1a1a3e, #0d1b2a);
-                color: white;
+                background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0d1b2a 100%);
+                color: #ffffff;
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
                 padding: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
-            .container {
-                background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(20px);
-                border-radius: 24px;
-                padding: 40px;
-                max-width: 1000px;
+            
+            .main-container {
+                max-width: 900px;
                 width: 100%;
-                text-align: center;
-                box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-                border: 1px solid rgba(255,255,255,0.08);
-                margin: 20px 0;
+                margin: 20px auto;
                 flex: 1;
             }
+            
+            /* Header */
             .header {
+                text-align: center;
                 margin-bottom: 30px;
+                padding: 30px 20px 20px;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
             }
-            .header h1 {
+            
+            .header .brand {
                 font-size: 14px;
-                color: rgba(255,255,255,0.4);
-                letter-spacing: 2px;
+                color: rgba(255, 255, 255, 0.3);
+                letter-spacing: 3px;
                 text-transform: uppercase;
                 font-weight: 300;
             }
-            .header .brand {
-                font-size: 12px;
-                color: rgba(255,255,255,0.3);
-                margin-top: 5px;
+            
+            .header .brand span {
+                color: #60a5fa;
+                font-weight: 600;
             }
-            .file-name {
-                color: #aaa;
+            
+            .header h1 {
+                font-size: 22px;
+                font-weight: 600;
+                margin-top: 8px;
+                background: linear-gradient(135deg, #60a5fa, #a78bfa);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            
+            .header .subtitle {
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.3);
+                margin-top: 4px;
+            }
+            
+            /* Card */
+            .card {
+                background: rgba(30, 27, 50, 0.8);
+                backdrop-filter: blur(20px);
+                border-radius: 24px;
+                padding: 40px 30px;
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            }
+            
+            /* File info */
+            .file-info-card {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
                 margin-bottom: 30px;
-                font-size: 18px;
-                font-weight: 300;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-            .file-name strong {
-                color: #fff;
-                font-weight: 500;
+            
+            .file-icon {
+                font-size: 48px;
+                line-height: 1;
             }
-            .content-display {
-                margin: 30px 0;
+            
+            .file-info {
+                text-align: center;
+            }
+            
+            .file-name-display {
+                font-size: 20px;
+                font-weight: 600;
+                word-break: break-all;
+            }
+            
+            .file-size, .file-type {
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.4);
+                margin-top: 4px;
+            }
+            
+            /* Content */
+            .content-wrapper {
+                margin: 20px 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                width: 100%;
             }
-            .download-btn {
-                background: linear-gradient(135deg, #667eea, #764ba2);
+            
+            .media-player {
+                max-width: 100%;
+                max-height: 70vh;
+                border-radius: 16px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                background: #000;
+                width: 100%;
+            }
+            
+            .media-image {
+                max-width: 100%;
+                max-height: 70vh;
+                border-radius: 16px;
+                object-fit: contain;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            }
+            
+            .media-audio {
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            .media-pdf {
+                width: 100%;
+                height: 70vh;
+                border-radius: 16px;
                 border: none;
-                color: white;
-                padding: 16px 50px;
-                font-size: 18px;
-                border-radius: 50px;
-                cursor: pointer;
-                transition: transform 0.3s, box-shadow 0.3s;
-                margin-top: 30px;
-                font-weight: 600;
-                text-decoration: none;
-                display: inline-block;
-                letter-spacing: 0.5px;
-                box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             }
-            .download-btn:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            
+            .file-preview {
+                padding: 30px;
+                background: rgba(255, 255, 255, 0.02);
+                border-radius: 16px;
+                border: 1px dashed rgba(255, 255, 255, 0.1);
             }
-            .links-section {
-                margin-top: 30px;
-                padding: 20px;
-                background: rgba(255,255,255,0.03);
-                border-radius: 12px;
-                border: 1px solid rgba(255,255,255,0.05);
+            
+            /* Code */
+            .code-wrapper {
+                background: #0a0a1a;
+                border-radius: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                overflow: hidden;
+                width: 100%;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             }
-            .links-section .link-item {
+            
+            .code-header {
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
-                justify-content: center;
-                gap: 10px;
-                margin: 8px 0;
-                font-size: 13px;
-                color: rgba(255,255,255,0.5);
-                word-break: break-all;
+                padding: 12px 20px;
+                background: rgba(255, 255, 255, 0.03);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             }
-            .links-section .link-item a {
-                color: #667eea;
-                text-decoration: none;
-                transition: color 0.3s;
+            
+            .code-lang {
+                font-size: 12px;
+                color: #60a5fa;
+                font-weight: 600;
+                letter-spacing: 1px;
             }
-            .links-section .link-item a:hover {
-                color: #a8b5f0;
-                text-decoration: underline;
+            
+            .code-lines {
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.3);
             }
-            .links-section .link-item .label {
-                color: rgba(255,255,255,0.3);
-                font-weight: 300;
-                min-width: 100px;
-                text-align: right;
-            }
-            .links-section .link-item .value {
-                text-align: left;
-                flex: 1;
-            }
-            .footer {
-                text-align: center;
-                padding: 20px 0;
-                color: rgba(255,255,255,0.2);
+            
+            .code-content {
+                padding: 20px;
+                margin: 0;
+                overflow: auto;
+                max-height: 60vh;
+                font-family: 'Courier New', monospace;
                 font-size: 14px;
+                line-height: 1.8;
+                color: #e0e0e0;
+                white-space: pre-wrap;
+                word-break: break-word;
+                background: transparent;
             }
-            .footer a {
-                color: rgba(255,255,255,0.3);
+            
+            .code-content code {
+                font-family: inherit;
+                background: transparent;
+                padding: 0;
+            }
+            
+            /* Buttons */
+            .actions {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 25px;
+            }
+            
+            .btn {
+                padding: 14px 40px;
+                border: none;
+                border-radius: 50px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
                 text-decoration: none;
-                transition: color 0.3s;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: center;
             }
-            .footer a:hover {
-                color: rgba(255,255,255,0.5);
+            
+            .btn-download {
+                background: linear-gradient(135deg, #3b82f6, #6366f1);
+                color: white;
+                box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+                flex: 1;
+                min-width: 150px;
             }
+            
+            .btn-download:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+            }
+            
+            .btn-code {
+                background: rgba(255, 255, 255, 0.05);
+                color: rgba(255, 255, 255, 0.7);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                flex: 1;
+                min-width: 150px;
+            }
+            
+            .btn-code:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateY(-3px);
+            }
+            
+            /* Badge */
+            .badge-container {
+                text-align: center;
+                margin-top: 25px;
+            }
+            
             .badge {
                 display: inline-block;
-                background: rgba(102, 126, 234, 0.2);
-                padding: 4px 16px;
-                border-radius: 20px;
-                font-size: 11px;
-                color: #667eea;
-                margin-top: 10px;
+                padding: 6px 20px;
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid rgba(59, 130, 246, 0.2);
+                border-radius: 50px;
+                font-size: 12px;
+                color: #60a5fa;
                 letter-spacing: 0.5px;
             }
-            .copy-btn {
-                background: rgba(255,255,255,0.05);
-                border: 1px solid rgba(255,255,255,0.1);
-                color: rgba(255,255,255,0.5);
-                padding: 4px 12px;
-                border-radius: 6px;
-                cursor: pointer;
-                font-size: 11px;
-                transition: all 0.3s;
-                margin-left: 8px;
+            
+            /* Footer */
+            .footer {
+                text-align: center;
+                padding: 30px 0 10px;
+                color: rgba(255, 255, 255, 0.15);
+                font-size: 14px;
+                width: 100%;
             }
-            .copy-btn:hover {
-                background: rgba(255,255,255,0.1);
-                color: #fff;
+            
+            .footer a {
+                color: rgba(255, 255, 255, 0.25);
+                text-decoration: none;
+                transition: color 0.3s;
             }
+            
+            .footer a:hover {
+                color: rgba(255, 255, 255, 0.4);
+            }
+            
+            /* Responsive */
             @media (max-width: 600px) {
-                .container { padding: 20px; }
-                .links-section .link-item { flex-direction: column; align-items: flex-start; }
-                .links-section .link-item .label { min-width: auto; text-align: left; }
+                .card { padding: 20px 15px; }
+                .file-info-card { flex-direction: column; text-align: center; }
+                .btn { min-width: 100%; }
+                .header h1 { font-size: 18px; }
+                .file-name-display { font-size: 17px; }
             }
         </style>
     </head>
     <body>
-        <div class="container">
+        <div class="main-container">
+            <!-- Header -->
             <div class="header">
-                <h1>📤 Uploaded via Buildura Cloud</h1>
-                <div class="brand">⚡ Secure File Sharing</div>
+                <div class="brand">📤 <span>Buildura</span> Cloud</div>
+                <h1>تم مشاركة هذا الملف عبر Buildura Cloud</h1>
+                <div class="subtitle">🔒 تخزين آمن ومشاركة فورية</div>
             </div>
             
-            <div class="file-name">📁 <strong>index.html</strong></div>
-            
-                <div class="content-display">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-            <div style="background: #1a1a2e; padding: 40px; border-radius: 12px; max-width: 90%; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-        <p style="font-size: 20px;">📁 File: <strong>index.html</strong></p>
-        <p style="color: #aaa; margin-top: 10px;">Type: text/html</p>
-        <p style="color: #aaa; font-size: 14px; margin-top: 5px;">Size: 3 KB</p>
+            <!-- Card -->
+            <div class="card">
+                <!-- File Info -->
+                <div class="file-info-card">
+                    <div class="file-icon">💻</div>
+                    <div class="file-info">
+                        <div class="file-name-display">index.html</div>
+                        <div class="file-size">📦 الحجم: 3.7 KB</div>
+                        <div class="file-type">📂 النوع: HTML</div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                      <div class="content-wrapper code-wrapper">
+        <div class="code-header">
+          <span class="code-lang">HTML</span>
+          <span class="code-lines" id="lineCount"></span>
+        </div>
+        <pre class="code-content"><code id="codeContent">جاري تحميل الكود...</code></pre>
       </div>
+      <script>
+        fetch('https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040747967_index.html')
+          .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+          })
+          .then(text => {
+            const lines = text.split('\n');
+            document.getElementById('lineCount').textContent = '📄 ' + lines.length + ' سطور';
+            document.getElementById('codeContent').textContent = text;
+          })
+          .catch(err => {
+            document.getElementById('codeContent').textContent = '❌ خطأ في تحميل الكود: ' + err.message;
+          });
+      </script>
       
-    </div>
-    
-            
-            <a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html" class="download-btn" download>⬇️ Download File</a>
-            
-            <div class="badge">🔒 Secured &amp; Hosted on GitHub</div>
-            
-            <div class="links-section">
-                <div class="link-item">
-                    <span class="label">📄 HTML Page:</span>
-                    <span class="value"><a href="#" onclick="window.location.href=window.location.href">Current Page</a></span>
+                
+                <!-- Actions -->
+                <div class="actions">
+                    <a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040747967_index.html" class="btn btn-download" download>
+                        ⬇️ تحميل الملف
+                    </a>
+                                        <button class="btn btn-code" onclick="document.querySelector('.code-wrapper').scrollIntoView({behavior:'smooth'});">
+                        💻 عرض الكود
+                    </button>
+                    
                 </div>
-                <div class="link-item">
-                    <span class="label">📥 Download Link:</span>
-                    <span class="value"><a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html" target="_blank">https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html</a></span>
-                </div>
-                <div class="link-item">
-                    <span class="label">🔗 Raw File:</span>
-                    <span class="value"><a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html" target="_blank">https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html</a></span>
-                </div>
-                <div class="link-item">
-                    <span class="label">💻 Source Code:</span>
-                    <span class="value"><a href="https://github.com/jawadbinmahmoud/file-sharer" target="_blank">View on GitHub</a></span>
+                
+                <!-- Badge -->
+                <div class="badge-container">
+                    <span class="badge">🔒 مستضاف على GitHub • آمن ومجاني</span>
                 </div>
             </div>
         </div>
         
+        <!-- Footer -->
         <div class="footer">
             Powered with ❤️ by <a href="mailto:buildurabusiness@gmail.com">buildurabusiness@gmail.com</a>
         </div>
