@@ -8,37 +8,52 @@
             * { margin: 0; padding: 0; box-sizing: border-box; }
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+                background: linear-gradient(135deg, #0a0a1a, #1a1a3e, #0d1b2a);
                 color: white;
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
                 padding: 20px;
             }
             .container {
                 background: rgba(255, 255, 255, 0.05);
-                backdrop-filter: blur(10px);
-                border-radius: 20px;
+                backdrop-filter: blur(20px);
+                border-radius: 24px;
                 padding: 40px;
-                max-width: 900px;
+                max-width: 1000px;
                 width: 100%;
                 text-align: center;
-                box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-                border: 1px solid rgba(255,255,255,0.1);
+                box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+                border: 1px solid rgba(255,255,255,0.08);
+                margin: 20px 0;
+                flex: 1;
             }
-            h1 {
-                font-size: 28px;
-                margin-bottom: 10px;
-                background: linear-gradient(45deg, #4facfe, #00f2fe);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+            .header {
+                margin-bottom: 30px;
+            }
+            .header h1 {
+                font-size: 14px;
+                color: rgba(255,255,255,0.4);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-weight: 300;
+            }
+            .header .brand {
+                font-size: 12px;
+                color: rgba(255,255,255,0.3);
+                margin-top: 5px;
             }
             .file-name {
                 color: #aaa;
                 margin-bottom: 30px;
-                font-size: 16px;
+                font-size: 18px;
+                font-weight: 300;
+            }
+            .file-name strong {
+                color: #fff;
+                font-weight: 500;
             }
             .content-display {
                 margin: 30px 0;
@@ -48,51 +63,116 @@
                 flex-direction: column;
             }
             .download-btn {
-                background: linear-gradient(45deg, #4facfe, #00f2fe);
+                background: linear-gradient(135deg, #667eea, #764ba2);
                 border: none;
                 color: white;
-                padding: 15px 40px;
+                padding: 16px 50px;
                 font-size: 18px;
                 border-radius: 50px;
                 cursor: pointer;
-                transition: transform 0.2s, box-shadow 0.2s;
-                margin-top: 20px;
-                font-weight: bold;
+                transition: transform 0.3s, box-shadow 0.3s;
+                margin-top: 30px;
+                font-weight: 600;
                 text-decoration: none;
                 display: inline-block;
+                letter-spacing: 0.5px;
+                box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
             }
             .download-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+                transform: translateY(-3px);
+                box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
             }
-            .info {
-                color: #666;
+            .links-section {
+                margin-top: 30px;
+                padding: 20px;
+                background: rgba(255,255,255,0.03);
+                border-radius: 12px;
+                border: 1px solid rgba(255,255,255,0.05);
+            }
+            .links-section .link-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin: 8px 0;
+                font-size: 13px;
+                color: rgba(255,255,255,0.5);
+                word-break: break-all;
+            }
+            .links-section .link-item a {
+                color: #667eea;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            .links-section .link-item a:hover {
+                color: #a8b5f0;
+                text-decoration: underline;
+            }
+            .links-section .link-item .label {
+                color: rgba(255,255,255,0.3);
+                font-weight: 300;
+                min-width: 100px;
+                text-align: right;
+            }
+            .links-section .link-item .value {
+                text-align: left;
+                flex: 1;
+            }
+            .footer {
+                text-align: center;
+                padding: 20px 0;
+                color: rgba(255,255,255,0.2);
                 font-size: 14px;
-                margin-top: 20px;
+            }
+            .footer a {
+                color: rgba(255,255,255,0.3);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            .footer a:hover {
+                color: rgba(255,255,255,0.5);
             }
             .badge {
                 display: inline-block;
-                background: rgba(79, 172, 254, 0.2);
-                padding: 5px 15px;
+                background: rgba(102, 126, 234, 0.2);
+                padding: 4px 16px;
                 border-radius: 20px;
-                font-size: 12px;
-                color: #4facfe;
+                font-size: 11px;
+                color: #667eea;
                 margin-top: 10px;
+                letter-spacing: 0.5px;
             }
-            .github-link {
-                color: #4facfe;
-                text-decoration: none;
-                font-size: 14px;
+            .copy-btn {
+                background: rgba(255,255,255,0.05);
+                border: 1px solid rgba(255,255,255,0.1);
+                color: rgba(255,255,255,0.5);
+                padding: 4px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 11px;
+                transition: all 0.3s;
+                margin-left: 8px;
             }
-            .github-link:hover {
-                text-decoration: underline;
+            .copy-btn:hover {
+                background: rgba(255,255,255,0.1);
+                color: #fff;
+            }
+            @media (max-width: 600px) {
+                .container { padding: 20px; }
+                .links-section .link-item { flex-direction: column; align-items: flex-start; }
+                .links-section .link-item .label { min-width: auto; text-align: left; }
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>📤 Share It!</h1>
-            <div class="file-name">📁 index.html</div>
+            <div class="header">
+                <h1>📤 Uploaded via Buildura Cloud</h1>
+                <div class="brand">⚡ Secure File Sharing</div>
+            </div>
+            
+            <div class="file-name">📁 <strong>index.html</strong></div>
+            
                 <div class="content-display">
       
       
@@ -104,20 +184,41 @@
       
       
       
-            <div style="background: #2d2d2d; padding: 30px; border-radius: 10px; max-width: 80%;">
-        <p style="font-size: 18px;">📁 File: <strong>index.html</strong></p>
-        <p style="color: #aaa;">Type: text/html</p>
-        <p style="color: #aaa; font-size: 14px;">Size: 3 KB</p>
+            <div style="background: #1a1a2e; padding: 40px; border-radius: 12px; max-width: 90%; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+        <p style="font-size: 20px;">📁 File: <strong>index.html</strong></p>
+        <p style="color: #aaa; margin-top: 10px;">Type: text/html</p>
+        <p style="color: #aaa; font-size: 14px; margin-top: 5px;">Size: 3 KB</p>
       </div>
       
     </div>
     
-            <a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784039720041_index.html" class="download-btn" download>⬇️ Download File</a>
-            <div class="badge">🔒 Secure Share via GitHub</div>
-            <div class="info">
-                ✨ Share this link with anyone<br>
-                <a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784039720041_index.html" class="github-link">🔗 Direct File Link</a>
+            
+            <a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html" class="download-btn" download>⬇️ Download File</a>
+            
+            <div class="badge">🔒 Secured &amp; Hosted on GitHub</div>
+            
+            <div class="links-section">
+                <div class="link-item">
+                    <span class="label">📄 HTML Page:</span>
+                    <span class="value"><a href="#" onclick="window.location.href=window.location.href">Current Page</a></span>
+                </div>
+                <div class="link-item">
+                    <span class="label">📥 Download Link:</span>
+                    <span class="value"><a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html" target="_blank">https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html</a></span>
+                </div>
+                <div class="link-item">
+                    <span class="label">🔗 Raw File:</span>
+                    <span class="value"><a href="https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html" target="_blank">https://raw.githubusercontent.com/jawadbinmahmoud/file-sharer/main/files/1784040257817_index.html</a></span>
+                </div>
+                <div class="link-item">
+                    <span class="label">💻 Source Code:</span>
+                    <span class="value"><a href="https://github.com/jawadbinmahmoud/file-sharer" target="_blank">View on GitHub</a></span>
+                </div>
             </div>
+        </div>
+        
+        <div class="footer">
+            Powered with ❤️ by <a href="mailto:buildurabusiness@gmail.com">buildurabusiness@gmail.com</a>
         </div>
     </body>
     </html>
